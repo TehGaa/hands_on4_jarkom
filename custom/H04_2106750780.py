@@ -58,17 +58,20 @@ class MyTopo(Topo):
         for i in range(num_switch):
             switch = 's%d'%(i+1)
             for j in range(number_host_per_switch[i]):
-                host_name = 'h%d%d'%(i+1, j+1)
                 if i == 0:
+                    host_name = 'K%d%d'%(i+1, j+1)
                     ip_addr = '192.168.12.%d/26'%(j+2)
                     self.addHost(host_name, ip=ip_addr, defaultRoute='via %s'%(default_gateway_koas[:-3]))
                 elif i == 1:
+                    host_name = 'I%d%d'%(i+1, j+1)
                     ip_addr = '192.168.12.%d/27'%(64+j+2)
                     self.addHost(host_name, ip=ip_addr, defaultRoute='via %s'%(default_gateway_internship[:-3]))
                 elif i == 2:
+                    host_name = 'S%d%d'%(i+1, j+1)
                     ip_addr = '192.168.12.%d/28'%(96+j+2)
                     self.addHost(host_name, ip=ip_addr, defaultRoute='via %s'%(default_gateway_spesialis[:-3]))
                 else:
+                    host_name = 'R%d%d'%(i+1, j+1)
                     ip_addr = '192.168.12.%d/29'%(112+j+2)
                     self.addHost(host_name, ip=ip_addr, defaultRoute='via %s'%(default_gateway_residen[:-3]))
                 self.addLink(host_name, switch)
