@@ -17,7 +17,7 @@ class MyTopo(Topo):
     def build(self):
         # number of router = 2
         num_switch = 4
-        number_host_per_switch = [62, 30, 14, 6]
+        number_host_per_switch = [61, 29, 13, 5]
 
         default_gateway_koas = '192.168.12.1/26'
         default_gateway_internship = '192.168.12.65/27'
