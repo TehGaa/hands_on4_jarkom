@@ -25,8 +25,9 @@ class MyTopo(Topo):
         default_gateway_residen = '192.168.12.113/29'
 
         #add 2 routers
-        router_asrama = self.addNode('Router Asrama')
-        router_rs = self.addNode('Router RS')
+        router_asrama = self.addNode('Router Asrama', cls=LinuxRouter, ip=default_gateway_koas)
+        
+        router_rs = self.addNode('Router RS', cls=LinuxRouter, ip=default_gateway_spesialis)
 
         ip_router_asrama_rs = '192.168.12.121/30'
         ip_router_rs_asrama = '192.168.12.122/30'
