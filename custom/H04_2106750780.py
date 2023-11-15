@@ -49,6 +49,8 @@ class MyTopo(Topo):
 
         #add link for router to router
         self.addLink(router_asrama, router_rs, 
+                     intfName1='Router Asrama-Router RS',
+                     intfName1='Router RS-Router Asrama',
                      params1={'ip':ip_router_asrama_rs},
                      params2={'ip':ip_router_rs_asrama})
 
