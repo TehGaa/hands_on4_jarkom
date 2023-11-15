@@ -39,19 +39,19 @@ class MyTopo(Topo):
         s4 = self.addSwitch('s4') #switch subnet residen
 
         #add link for each switch
-        self.addLink(s1, router_asrama, intfName2='Router Asrama-eth1', 
+        self.addLink(s1, router_asrama, intfName2='r0-eth1', 
                      params2={'ip': default_gateway_koas})
-        self.addLink(s2, router_asrama, intfName2='Router Asrama-eth2', 
+        self.addLink(s2, router_asrama, intfName2='r0-eth2', 
                      params2={'ip':default_gateway_internship})
-        self.addLink(s3, router_rs, intfName2='Router RS-eth1', 
+        self.addLink(s3, router_rs, intfName2='r1-eth1', 
                      params2={'ip':default_gateway_spesialis})
-        self.addLink(s4, router_rs, intfName2='Router RS-eth2', 
+        self.addLink(s4, router_rs, intfName2='r1-eth2', 
                      params2={'ip':default_gateway_residen})
 
         #add link for router to router
         self.addLink(router_asrama, router_rs, 
-                     intfName1='Router Asrama-Router RS',
-                     intfName2='Router RS-Router Asrama',
+                     intfName1='r0-eth3',
+                     intfName2='r1-eth3',
                      params1={'ip':ip_router_asrama_rs},
                      params2={'ip':ip_router_rs_asrama})
 
